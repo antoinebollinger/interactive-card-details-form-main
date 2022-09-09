@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="stylesheet" href="/css/style.min.css">
+    <script defer src="js/script.js"></script>
+</head>
+
+<body>
+    <section class="desktop-bg">
+        <div class="back">
+            <img src="/images/bg-card-back.png">
+            <p class="card-cvc" data-placeholder="000"></p>
+        </div>
+        <div class="front">
+            <img src="/images/bg-card-front.png">
+            <img src="/images/card-logo.svg" class="card-logo">
+            <p class="card-number" data-placeholder="0000 0000 0000 0000"></p>
+            <p class="card-name" data-placeholder="Jane Appleseed"></p>
+            <p class="card-date">
+                <span class="card-month" data-placeholder="00"></span>
+                <span>/</span>
+                <span class="card-year" data-placeholder="00"></span>
+            </p>
+        </div>
+    </section>
+    <section class="card">
+        <form>
+            <label for="card-name">Cardholder Name</label>
+            <input type="text" name="name" id="card-name" placeholder="e.g. Jane Appleseed">
+            <p class="warning">Can't be blank</p>
+            <label for="card-number">Card Number</label>
+            <input type="text" name="number" id="card-number" placeholder="e.g. 1234 5678 9123 0000" pattern="[0-9 ]+">
+            <p class="warning">Wrong format, numbers only</p>
+            <div class="date double-gap">
+                <div class="exp">
+                    <label>Exp. Date (MM/YY)</label>
+                    <input type="text" name="month" id="card-month" placeholder="MM" pattern="[0-9]+">
+                    <input type="text" name="year" id="card-year" placeholder="YY" pattern="[0-9]+">
+                    <p class="warning">Can't be blank</p>
+                </div>
+                <div class="cvc">
+                    <label>CVC</label>
+                    <input type="text" name="cvc" id="card-cvc" placeholder="e.g. 123" pattern="[0-9]+">
+                    <p class="warning">Can't be blank</p>
+                </div>
+            </div>
+            <input type="submit" value="Confirm">
+        </form>
+    </section>
+    <!-- Completed state start -->
+    <template>
+        <form class="confirmation">
+            <img src="/images/icon-complete.svg">
+            <h2>Thank you!</h2>
+            <p>We've added your card details</p>
+            <input type="submit" value="Continue">
+        </form>
+    </template>
+
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://antoinebollinger.fr">Antoine Bollinger</a>.
+    </div>
+</body>
+
+</html>
